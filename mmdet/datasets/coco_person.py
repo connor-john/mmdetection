@@ -23,7 +23,7 @@ class CocoPersonDataset(CocoDataset):
         self.cat_ids = self.coco.get_cat_ids(cat_names=['person'])
 
         self.cat2label = {cat_id: i for i, cat_id in enumerate(self.cat_ids)}
-        self.img_ids = self.coco.get_img_ids(catIds=self.cat_ids)
+        self.img_ids = self.coco.get_img_ids(cat_ids=self.cat_ids)
         data_infos = []
         total_ann_ids = []
         for i in self.img_ids:
